@@ -1,30 +1,25 @@
-# Fullstack Challenge
+## Solution to the [Fullstack Challenge](https://github.com/bythepixel/fullstack-challenge)
+The https://openweathermap.org/api v3.0 was used as the weather API.
 
-## Instructions
-Using Laravel and VueJS, create an application which shows the weather for a set of users.
-- Clone this repository. 
-- Once completed, send a link of the clone repository to interviewer and let them know how long the exercise took. 
-- Update the frontend landing page to show a list of users and their current weather.
-- Clicking a user opens a modal or screen which shows that users detailed weather report.
-- Weather update should be no older than 1 hour.
-- Internal API request(s) to retrieve weather data should take no longer than 500ms. Consider that external APIs could and will take longer than this from time to time and should be accounted for. 
-- We are looking for attention to detail!
-- Instructions are purposely left somewhat open-ended to allow the developer to make some of their own decisions on implementation and design. 
-- This is not a designer test so the frontend does not have to look "good", but of course bonus points if you can make it look appealing. 
+## I would appreciate it if the code reviewer would consider the following implementations that I have made:
 
-## Things to consider:
-- Chose your own weather api such as https://openweathermap.org/api or https://www.weather.gov/documentation/services-web-api.
-- Testability.
-- Best practices.
-- Design patterns.
-- Availability of external APIs is not guaranteed and should not cause page to crash.
-- Twenty randomized users are added via the seeder process, each having their own unique location (longitude and latitude).
-- Redis is available (Docker service) if you wish to use it.
-- Queues, workers, websockets could be useful.
-- Feel free to use a frontend UI library such as PrimeVue, Vuetify, Bootstrap, Tailwind, etc. 
-- Anything else you want to do to show off your coding chops!
+### API
+- Design pattern: To segregate the data access logic and align it with the business entities in the business logic, I employed the Repository design pattern.
+- Caching: Redis was employed for caching, with a default Time-to-Live (TTL) of one hour. However, the TTL value can be customized by specifying a new value in the `.env` file using the `CACHE_TIME` parameter.
+- Task Schedule: A task is scheduled to execute on an hourly basis, which updates the weather reports in the cache database.
+- Tests: There are a total of eight functional tests and eleven unit tests. To run the feature tests, use the command `php artisan test --testsuite=Feature`. To run the unit tests, use the command `php artisan test --testsuite=Unit`.
+- [Laravel Pint](https://laravel.com/docs/10.x/pint)  is used as code style fixer
+- Laravel Websockets: A broadcast occurs when WeatherUpdated event is triggered
+- My API service stands-alone inside `app/Services` directory
+- Dependency Injections & Separation of concerns
 
-## To run the local dev environment:
+### Frontend
+- Pinea for store management
+- TypeScript for type safety
+- Tailwind CSS
+- Vue composition API
+
+## Setup
 
 ### API
 - Navigate to `/api` folder
@@ -38,11 +33,15 @@ Using Laravel and VueJS, create an application which shows the weather for a set
   - Migrate database: `php artisan migrate` 
   - Seed database: `php artisan db:seed`
   - Run tests: `php artisan test`
-- Visit api: `http://localhost`
-
+  - Queue: `php artisan queue:listen --timeout` It's essential to execute this command as it monitors a job which is scheduled to fetch the most recent weather report every hour.
+  - Laravel Websockets (Optional): `php artisan websockets:serve` and visit `http://localhost/laravel-websockets` then connect to port 6001
+  - Visit api: `http://localhost`
+  
 ### Frontend
-- Navigate to `/frontend` folder
-- Ensure nodejs v18 is active on host
-- Install javascript dependencies: `npm install`
-- Run frontend: `npm run dev`
-- Visit frontend: `http://localhost:5173`
+  - Navigate to `/frontend` folder
+  - Ensure nodejs v18 is active on host
+  - Install javascript dependencies: `npm install`
+  - Run frontend: `npm run dev`
+  - Visit frontend: `http://localhost:5173`
+
+##### Thank you and have a lovely day `:smiley:`
