@@ -9,6 +9,12 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
+    {
+      path: "/user/:id",
+      name: "user",
+      component: () => import("../views/UserView.vue"),
+      props: true, // passes :handle as a props to the component
+    },
   ],
 });
 
