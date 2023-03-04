@@ -9,9 +9,6 @@ use Illuminate\Support\Facades\Cache;
 
 class UserRepository implements UserRepositoryInterface
 {
-    /**
-     * @return Collection
-     */
     public function all(): Collection
     {
         if (Cache::has('users')) {
@@ -25,7 +22,6 @@ class UserRepository implements UserRepositoryInterface
     }
 
     /**
-     * @param $id
      * @return mixed
      */
     public function get($id)

@@ -25,9 +25,6 @@ class WeatherRepository implements WeatherRepositoryInterface
     }
 
     /**
-     * @param float $lat
-     * @param float $lon
-     * @param CarbonInterface $day
      * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -61,10 +58,9 @@ class WeatherRepository implements WeatherRepositoryInterface
     }
 
     /**
-     * @param float $lat
-     * @param float $lon
-     * @param CarbonInterface $day
+     * @param  CarbonInterface  $day
      * @return array
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getWeatherForAllDaysInWeek(float $lat, float $lon)
@@ -88,11 +84,6 @@ class WeatherRepository implements WeatherRepositoryInterface
         ];
     }
 
-    /**
-     * @param CarbonInterface $day
-     * @param array $weather
-     * @return array
-     */
     public function mapWeather(CarbonInterface $day, array $weather = []): array
     {
         if (isset($weather['data'])) {
@@ -119,10 +110,6 @@ class WeatherRepository implements WeatherRepositoryInterface
         ];
     }
 
-    /**
-     * @param array|null $iconDetail
-     * @return array
-     */
     private function getIcon(?array $iconDetail = null): array
     {
         $icon = $iconDetail['icon'] ?? null;

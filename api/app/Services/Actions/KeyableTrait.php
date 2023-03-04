@@ -9,15 +9,11 @@ trait KeyableTrait
 {
     /**
      * The key used to authenticate with the service.
-     *
-     * @var string
      */
     protected string $appid;
 
     /**
      * Return the API key.
-     *
-     * @return string
      */
     public function getAppid(): string
     {

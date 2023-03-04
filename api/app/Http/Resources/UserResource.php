@@ -23,7 +23,7 @@ class UserResource extends JsonResource
             'weather' => $this->weather ?? null,
             'weather_for_all_days' => $this->weather_for_all_days ?? null,
             'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            'updated_at' => $this->updated_at,
         ];
     }
 }

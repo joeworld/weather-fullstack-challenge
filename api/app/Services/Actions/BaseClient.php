@@ -14,15 +14,11 @@ abstract class BaseClient implements ClientInterface
 
     /**
      * Holds the results of the query.
-     *
-     * @var string
      */
     private string $data;
 
     /**
      * BaseClient constructor.
-     *
-     * @param string $appid
      */
     public function __construct(string $appid)
     {

@@ -11,43 +11,32 @@ class OpenWeatherService extends BaseClient
 {
     /**
      * Geographical coordinates latitude
-     *
-     * @var float
      */
     protected float $lat;
 
     /**
      * Geographical coordinates longitude
-     *
-     * @var float
      */
     protected float $lon;
 
     /**
      * Timestamp (Unix time, UTC time zone), e.g. dt=1586468027
-     *
-     * @var string|null
      */
     protected ?string $dt;
 
     /**
      * Units of measurement. standard, metric and imperial units are available.
-     *
-     * @var string|null
      */
     protected ?string $units = 'metric';
 
     /**
      * lang parameter to get the output in your language
      * learn more at https://openweathermap.org/api/one-call-3#multi
-     *
-     * @var string|null
      */
     protected ?string $lang;
 
     /**
      * WeatherService constructor.
-     * @param string $key
      */
     public function __construct(string $key)
     {
@@ -63,7 +52,6 @@ class OpenWeatherService extends BaseClient
     }
 
     /**
-     * @param float $lat
      * @return $this
      */
     public function setLat(float $lat)
@@ -74,7 +62,6 @@ class OpenWeatherService extends BaseClient
     }
 
     /**
-     * @param float $lon
      * @return $this
      */
     public function setLon(float $lon): OpenWeatherService
@@ -85,7 +72,6 @@ class OpenWeatherService extends BaseClient
     }
 
     /**
-     * @param string $dt
      * @return $this
      */
     public function setDt(string $dt): OpenWeatherService
@@ -96,7 +82,6 @@ class OpenWeatherService extends BaseClient
     }
 
     /**
-     * @param string $units
      * @return $this
      */
     public function setUnits(string $units): OpenWeatherService
@@ -107,7 +92,6 @@ class OpenWeatherService extends BaseClient
     }
 
     /**
-     * @param $lang
      * @return $this
      */
     public function setLang($lang): OpenWeatherService
