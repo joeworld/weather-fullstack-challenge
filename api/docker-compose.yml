@@ -1,3 +1,4 @@
+name: fullstack-challenge
 services:
     app:
         build:
