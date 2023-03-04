@@ -11,9 +11,6 @@ class UserController extends Controller
 {
     /**
      * UserController constructor.
-     *
-     * @param UserRepository $userRepo
-     * @param WeatherRepository $weatherRepository
      */
     public function __construct(private UserRepository $userRepo, private WeatherRepository $weatherRepository)
     {
@@ -32,8 +29,8 @@ class UserController extends Controller
     }
 
     /**
-     * @param $id
      * @return UserResource|\never
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function show($id)
@@ -49,8 +46,8 @@ class UserController extends Controller
     }
 
     /**
-     * @param $id
      * @return UserResource|\never
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getAllDaysInWeekWeather($id)

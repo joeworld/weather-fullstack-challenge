@@ -15,14 +15,8 @@ class WeatherJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    /**
-     * @var UserRepository
-     */
     private UserRepository $userRepository;
 
-    /**
-     * @var WeatherRepository
-     */
     private WeatherRepository $weatherRepository;
 
     /**

@@ -28,13 +28,12 @@ class WeatherUpdated implements ShouldBroadcast
 
     /**
      * Create a new event instance.
-     * @param User $user
      */
     public function __construct(User $user)
     {
         $this->userId = $user->id;
         $weather = new WeatherRepository();
-        $user->weather =  $weather->getWeather($user->latitude, $user->longitude, Carbon::today()); // Get cached data
+        $user->weather = $weather->getWeather($user->latitude, $user->longitude, Carbon::today()); // Get cached data
         $this->user = new UserResource($user);
     }
 

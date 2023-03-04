@@ -23,6 +23,7 @@ class WeatherCommand extends Command
 
     /**
      * Execute the console command.
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function handle(): void
