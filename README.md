@@ -1,4 +1,4 @@
-## Solution to the [Fullstack Challenge](https://github.com/bythepixel/fullstack-challenge)
+## Solution to this [Fullstack Challenge](https://github.com/bythepixel/fullstack-challenge)
 The https://openweathermap.org/api v3.0 was used as the weather API.
 
 ## I would appreciate it if the code reviewer would consider the following implementations that I have made:
