@@ -125,6 +125,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'cache_time' => env('CACHE_TIME', 3600),
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver

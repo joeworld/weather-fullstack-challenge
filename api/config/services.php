@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'openweather' => [
+        'id' => env('OPENWEATHER_APPID', 'd638568456c5db9709ffb3620c419cc2'),
+    ],
+
 ];
