@@ -28,6 +28,18 @@ export type WeatherForAllDays = {
     sunday: WeatherData;
 };
 
+export interface UsersList {
+    id: number;
+    name: string;
+    email: string;
+    lat: string;
+    lon: string;
+    weather: null;
+    weather_for_all_days: null;
+    created_at: string;
+    updated_at: string;
+}
+
 export interface UserWeatherReport {
     id: number;
     name: string;
