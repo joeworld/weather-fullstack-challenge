@@ -4,6 +4,7 @@ import type { UserWeatherReport, LoadingState } from "@/types";
 
 const url = import.meta.env.VITE_API_URL || "http://localhost";
 
+// Define store
 export const useWeatherStore = defineStore("weatherReport", () => {
     // STATE
     const users = ref<[]>([]);
@@ -29,6 +30,7 @@ export const useWeatherStore = defineStore("weatherReport", () => {
         users.value = data.data;
     }
 
+    // Get user details
     async function getUserDetails(id: number) {
         isFetching.user = true;
         const response = await fetch(`${url}/users/${id}`);
@@ -41,6 +43,8 @@ export const useWeatherStore = defineStore("weatherReport", () => {
             data.value = null;
         }
     }
+
+    // Get daily weather reports
 
     async function getDailyWeatherReports(id: number) {
         isFetching.daily = true;
