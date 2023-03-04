@@ -44,4 +44,4 @@ The https://openweathermap.org/api v3.0 was used as the weather API.
   - Run frontend: `npm run dev`
   - Visit frontend: `http://localhost:5173`
 
-##### Thank you and have a lovely day `:smiley:`
+##### Thank you and have a lovely day.
