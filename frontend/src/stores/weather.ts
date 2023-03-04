@@ -1,13 +1,13 @@
 import { ref, reactive, computed } from "vue";
 import { defineStore } from "pinia";
-import type { UserWeatherReport, LoadingState } from "@/types";
+import type { UserWeatherReport, LoadingState, UsersList } from "@/types";
 
 const url = import.meta.env.VITE_API_URL || "http://localhost";
 
 // Define store
 export const useWeatherStore = defineStore("weatherReport", () => {
     // STATE
-    const users = ref<[]>([]);
+    const users = ref<UsersList[]>([]);
     const data = ref<UserWeatherReport | null>(null);
     const dailyReports = ref<UserWeatherReport | null>(null);
     const isFetching: LoadingState = reactive({
@@ -16,7 +16,7 @@ export const useWeatherStore = defineStore("weatherReport", () => {
     });
 
     // GETTERS
-    const getUsers = computed<[]>(() => users.value);
+    const getUsers = computed<UsersList[]>(() => users.value);
     const getUserReport = computed<UserWeatherReport | null>(() => data.value);
     const getDailyReport = computed<UserWeatherReport | null>(
         () => dailyReports.value
