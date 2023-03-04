@@ -1,4 +1,4 @@
-## Solution to the [Fullstack Challenge](https://github.com/bythepixel/fullstack-challenge)
+## Solution to this [Fullstack Challenge](https://github.com/bythepixel/fullstack-challenge)
 The https://openweathermap.org/api v3.0 was used as the weather API.
 
 ## I would appreciate it if the code reviewer would consider the following implementations that I have made:
@@ -9,7 +9,7 @@ The https://openweathermap.org/api v3.0 was used as the weather API.
 - Task Schedule: A task is scheduled to execute on an hourly basis, which updates the weather reports in the cache database.
 - Tests: There are a total of eight functional tests and eleven unit tests. To run the feature tests, use the command `php artisan test --testsuite=Feature`. To run the unit tests, use the command `php artisan test --testsuite=Unit`.
 - [Laravel Pint](https://laravel.com/docs/10.x/pint)  is used as code style fixer
-- Laravel Websockets: A broadcast occurs when WeatherUpdated event is triggered
+- Laravel Websockets: A broadcast occurs when the `WeatherUpdated` event is triggered
 - My API service stands-alone inside `app/Services` directory
 - Dependency Injections & Separation of concerns
 
@@ -44,4 +44,4 @@ The https://openweathermap.org/api v3.0 was used as the weather API.
   - Run frontend: `npm run dev`
   - Visit frontend: `http://localhost:5173`
 
-##### Thank you and have a lovely day `:smiley:`
+##### Thank you and have a lovely day.
